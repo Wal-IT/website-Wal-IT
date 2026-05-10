@@ -663,8 +663,8 @@
         <div class="section-label" data-i18n="over-label">Over mij</div>
         <h2 class="section-title" data-i18n="over-title">Wannes<br>Gillis</h2>
         <div class="section-divider"></div>
-        <p>Ik ben Wannes Gillis, zaakvoerder van Wal-IT. Met een passie voor data help ik bedrijven om cijfers om te zetten in duidelijke inzichten die écht het verschil maken in hun dagelijkse beslissingen.</p>
-        <p>Ik help organisaties om bestaande data te analyseren en om te zetten in overzichtelijke dashboards en rapportages met Power BI. Geen complexe IT-verhalen, maar inzichten die je meteen kunt gebruiken.</p>
+        <p data-i18n="over-p1">Ik ben Wannes Gillis, zaakvoerder van Wal-IT. Met een passie voor data help ik bedrijven om cijfers om te zetten in duidelijke inzichten die écht het verschil maken in hun dagelijkse beslissingen.</p>
+        <p data-i18n="over-p2">Ik help organisaties om bestaande data te analyseren en om te zetten in overzichtelijke dashboards en rapportages met Power BI. Geen complexe IT-verhalen, maar inzichten die je meteen kunt gebruiken.</p>
         <div class="signature">Wannes Gillis</div>
         <div class="signature-title" data-i18n="sig-title">Zaakvoerder Wal-IT</div>
       </div>
@@ -693,8 +693,8 @@
             <line x1="9" y1="24" x2="19" y2="24" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="dienst-title">Power BI Dashboards</div>
-        <p class="dienst-text">Overzichtelijke dashboards op maat die je bedrijfsdata vertalen naar heldere visuals en actionable inzichten.</p>
+        <div class="dienst-title" data-i18n="dienst1-title">Power BI Dashboards</div>
+        <p class="dienst-text" data-i18n="dienst1-text">Overzichtelijke dashboards op maat die je bedrijfsdata vertalen naar heldere visuals en actionable inzichten.</p>
       </div>
       <div class="dienst-card">
         <div class="dienst-icon">
@@ -703,8 +703,8 @@
             <line x1="18" y1="18" x2="25" y2="25" stroke="white" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="dienst-title">Data-analyse</div>
-        <p class="dienst-text">Grondige analyse van je bestaande data om kansen, verbeterpunten en inzichten bloot te leggen die direct waarde opleveren.</p>
+        <div class="dienst-title" data-i18n="dienst2-title">Data-analyse</div>
+        <p class="dienst-text" data-i18n="dienst2-text">Grondige analyse van je bestaande data om kansen, verbeterpunten en inzichten bloot te leggen die direct waarde opleveren.</p>
       </div>
       <div class="dienst-card">
         <div class="dienst-icon">
@@ -717,8 +717,8 @@
             <rect x="18" y="15" width="2" height="4" rx="0.3" fill="white" opacity="0.6"/>
           </svg>
         </div>
-        <div class="dienst-title">Rapportages</div>
-        <p class="dienst-text">Geautomatiseerde rapportages die je wekelijks of maandelijks een helder beeld geven van de prestaties van je bedrijf.</p>
+        <div class="dienst-title" data-i18n="dienst3-title">Rapportages</div>
+        <p class="dienst-text" data-i18n="dienst3-text">Geautomatiseerde rapportages die je wekelijks of maandelijks een helder beeld geven van de prestaties van je bedrijf.</p>
       </div>
     </div>
   </div>
@@ -788,8 +788,8 @@
     <div class="section-divider"></div>
     <div class="contact-grid">
       <div class="contact-info">
-        <p>Ik neem vrijblijvend een kijkje naar jullie huidige data en rapportage. Je ontvangt een helder overzicht van kansen, verbeterpunten en inzichten die direct waarde kunnen opleveren.</p>
-        <p>Geen verplichtingen. Wel duidelijkheid.</p>
+        <p data-i18n="contact-p1">Ik neem vrijblijvend een kijkje naar jullie huidige data en rapportage. Je ontvangt een helder overzicht van kansen, verbeterpunten en inzichten die direct waarde kunnen opleveren.</p>
+        <p data-i18n="contact-p2">Geen verplichtingen. Wel duidelijkheid.</p>
         <div class="contact-items">
           <div class="contact-item">
             <div class="contact-item-icon">
@@ -810,31 +810,31 @@
               </svg>
             </div>
             <div>
-              <div class="contact-item-label">Telefoon</div>
+              <div class="contact-item-label" data-i18n="contact-tel">Telefoon</div>
               <div class="contact-item-value">+32 477 54 08 57</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="contact-form">
+      <form class="contact-form" action="https://formspree.io/f/mpqbodlg" method="POST">
         <div class="form-group">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam">
+          <label data-i18n="form-name">Naam</label>
+          <input type="text" name="naam" data-i18n="form-name-ph" placeholder="Uw naam" required>
         </div>
         <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" placeholder="uw@email.be">
+          <label data-i18n="form-email">E-mail</label>
+          <input type="email" name="email" placeholder="uw@email.be" required>
         </div>
         <div class="form-group">
-          <label>Bedrijf</label>
-          <input type="text" placeholder="Uw bedrijfsnaam">
+          <label data-i18n="form-company">Bedrijf</label>
+          <input type="text" name="bedrijf" data-i18n="form-company-ph" placeholder="Uw bedrijfsnaam">
         </div>
         <div class="form-group">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel iets over uw data-uitdaging..."></textarea>
+          <label data-i18n="form-message">Bericht</label>
+          <textarea name="bericht" data-i18n="form-message-ph" placeholder="Vertel iets over uw data-uitdaging..." required></textarea>
         </div>
-        <button class="form-submit" data-i18n="form-submit">Verstuur aanvraag</button>
-      </div>
+        <button type="submit" class="form-submit" data-i18n="form-submit">Verstuur aanvraag</button>
+      </form>
     </div>
   </div>
 </section>
@@ -899,6 +899,7 @@ const translations = {
     "form-submit": "Verstuur aanvraag",
     "footer-tagline": "Data · Inzicht · Impact",
     "footer-copy": "© 2025 Wal-IT — Wannes Gillis",
+    "contact-tel": "Telefoon",
   },
   en: {
     "nav-home": "Home",
@@ -914,7 +915,7 @@ const translations = {
     "over-label": "About me",
     "over-title": "Wannes<br>Gillis",
     "over-p1": "I am Wannes Gillis, managing director of Wal-IT. With a passion for data, I help businesses turn numbers into clear insights that truly make a difference in their daily decisions.",
-    "over-p2": "I help organisations analyse existing data and transform it into clear dashboards and reports using Power BI. No complex IT jargon — just insights you can use straight away.",
+    "over-p2": "I help organisations analyse existing data and transform it into clear dashboards and reports using Power BI. No complex IT jargon, just insights you can use straight away.",
     "sig-title": "Managing Director Wal-IT",
     "diensten-label": "What I do",
     "diensten-title": "Services",
@@ -940,6 +941,7 @@ const translations = {
     "form-submit": "Send request",
     "footer-tagline": "Data · Insight · Impact",
     "footer-copy": "© 2025 Wal-IT — Wannes Gillis",
+    "contact-tel": "Phone",
   },
   it: {
     "nav-home": "Home",
@@ -955,7 +957,7 @@ const translations = {
     "over-label": "Chi sono",
     "over-title": "Wannes<br>Gillis",
     "over-p1": "Sono Wannes Gillis, amministratore di Wal-IT. Con una passione per i dati, aiuto le aziende a trasformare i numeri in intuizioni chiare che fanno davvero la differenza nelle decisioni quotidiane.",
-    "over-p2": "Aiuto le organizzazioni ad analizzare i dati esistenti e trasformarli in dashboard e report chiari con Power BI. Nessun gergo IT complesso — solo intuizioni immediatamente utilizzabili.",
+    "over-p2": "Aiuto le organizzazioni ad analizzare i dati esistenti e trasformarli in dashboard e report chiari con Power BI. Nessun gergo IT complesso, solo intuizioni immediatamente utilizzabili.",
     "sig-title": "Amministratore Wal-IT",
     "diensten-label": "Cosa faccio",
     "diensten-title": "Servizi",
@@ -981,6 +983,7 @@ const translations = {
     "form-submit": "Invia richiesta",
     "footer-tagline": "Dati · Intuizioni · Impatto",
     "footer-copy": "© 2025 Wal-IT — Wannes Gillis",
+    "contact-tel": "Telefono",
   }
 };
 
