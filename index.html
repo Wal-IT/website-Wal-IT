@@ -1041,7 +1041,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     bericht: form.querySelector('[name="bericht"]').value,
   };
   try {
-    await emailjs.send('service_evuc4rl', 'template_m58b22p', templateParams);
+    await emailjs.send('service_evuc4rl', 'template_m81flml', templateParams);
     await emailjs.send('service_evuc4rl', 'template_auatqyt', templateParams);
     form.reset();
     if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
