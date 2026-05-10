@@ -5,7 +5,12 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const { naam, email, bedrijf, bericht } = JSON.parse(event.body);
+const body = JSON.parse(event.body);
+const naam = body.naam;
+const email = body.email;
+const bedrijf = body.bedrijf;
+const bericht = body.bericht;
+console.log('Ontvangen data:', body);
 
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
