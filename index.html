@@ -1033,6 +1033,13 @@ function reloadCaptcha() {
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const form = this;
+
+  // Valideer reCAPTCHA
+  const captchaResponse = grecaptcha.getResponse();
+  if (!captchaResponse) {
+    alert('Gelieve de reCAPTCHA te bevestigen.');
+    return;
+  }
   const templateParams = {
     naam: form.querySelector('[name="naam"]').value,
     email: form.querySelector('[name="_replyto"]').value,
