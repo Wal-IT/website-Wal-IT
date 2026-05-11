@@ -1011,24 +1011,22 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
 
-  // Reload reCAPTCHA in correct language
-  const langMap = { nl: 'nl', en: 'en', it: 'it' };
-  const script = document.getElementById('recaptcha-script');
-  const newScript = document.createElement('script');
-  newScript.id = 'recaptcha-script';
-  newScript.src = `https://www.google.com/recaptcha/api.js?hl=${langMap[lang]}&render=explicit&onload=reloadCaptcha`;
-  newScript.async = true;
-  newScript.defer = true;
-  script.parentNode.replaceChild(newScript, script);
+  if (typeof grecaptcha !== 'undefined') {
+    try { grecaptcha.reset(); } catch(e) {}
+  }
 }
 
 function reloadCaptcha() {
   const container = document.querySelector('.g-recaptcha');
   if (container) {
-    container.innerHTML = '';
-    grecaptcha.render(container, {
-      sitekey: '6LfqVeIsAAAAAOl2K6iDy_IOkrvciRT3QiRKQU42'
-    });
+    try {
+      grecaptcha.reset();
+    } catch(e) {
+      container.innerHTML = '';
+      grecaptcha.render(container, {
+        sitekey: '6LfqVeIsAAAAAOl2K6iDy_IOkrvciRT3QiRKQU42'
+      });
+    }
   }
 }
 
