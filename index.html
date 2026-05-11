@@ -1079,8 +1079,8 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     });
     if (response.ok) {
       const el = document.getElementById('form-success');
-      el.style.background = '';
-      el.style.color = '';
+      el.style.background = '#e8f5e9';
+      el.style.color = '#2e7d32';
       el.innerHTML = translations[lang]['form-success'];
       el.style.display = 'block';
       setTimeout(() => { el.style.display = 'none'; }, 5000);
