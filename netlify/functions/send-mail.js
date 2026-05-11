@@ -21,7 +21,7 @@ exports.handler = async (event) => {
       to: email,
       from: 'wannes.gillis@wal-it.be',
       subject: 'Bedankt voor uw aanvraag — Wal-IT',
-      text: `Beste ${naam},\n\nBedankt voor uw aanvraag bij Wal-IT! We nemen zo snel mogelijk contact met u op.\n\nUw gegevens:\nNaam: ${naam}\nE-mail: ${email}\nBedrijf: ${bedrijf}\n\nUw bericht:\n${bericht}\n\nMet vriendelijke groeten,\nWannes Gillis\nWal-IT\n+32 477 54 08 57\nwww.wal-it.be`
+      text: `Beste ${naam}\n\nBedankt voor uw aanvraag bij Wal-IT! We nemen zo snel mogelijk contact met u op.\n\nUw gegevens:\nNaam: ${naam}\nE-mail: ${email}\nBedrijf: ${bedrijf}\n\nUw bericht:\n${bericht}\n\nMet vriendelijke groeten\nWannes Gillis\nWal-IT\n+32 477 54 08 57\nwww.wal-it.be`
     });
 
     return { statusCode: 200, body: JSON.stringify({ success: true }) };
