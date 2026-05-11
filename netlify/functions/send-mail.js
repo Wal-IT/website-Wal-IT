@@ -30,9 +30,9 @@ exports.handler = async (event) => {
   };
 
   const confirmTexts = {
-    nl: `Beste ${naam},\n\nBedankt voor uw aanvraag bij Wal-IT! We nemen zo snel mogelijk contact met u op.\n\nUw gegevens:\nNaam: ${naam}\nE-mail: ${email}\nBedrijf: ${bedrijf}\n\nUw bericht:\n${bericht}\n\nMet vriendelijke groeten,\nWannes Gillis\nWal-IT\n+32 477 54 08 57\nwww.wal-it.be`,
-    en: `Dear ${naam},\n\nThank you for your request at Wal-IT! We will contact you as soon as possible.\n\nYour details:\nName: ${naam}\nEmail: ${email}\nCompany: ${bedrijf}\n\nYour message:\n${bericht}\n\nKind regards,\nWannes Gillis\nWal-IT\n+32 477 54 08 57\nwww.wal-it.be`,
-    it: `Gentile ${naam},\n\nGrazie per la sua richiesta a Wal-IT! La contatteremo il prima possibile.\n\nI suoi dati:\nNome: ${naam}\nEmail: ${email}\nAzienda: ${bedrijf}\n\nIl suo messaggio:\n${bericht}\n\nCordiali saluti,\nWannes Gillis\nWal-IT\n+32 477 54 08 57\nwww.wal-it.be`
+    nl: `Beste ${naam}\n\nBedankt voor uw aanvraag bij Wal-IT! We nemen zo snel mogelijk contact met u op.\n\nUw gegevens:\nNaam: ${naam}\nE-mail: ${email}\nBedrijf: ${bedrijf}\n\nUw bericht:\n${bericht}\n\nMet vriendelijke groeten\nWannes Gillis\nWal-IT\n+32 477 54 08 57\nwww.wal-it.be`,
+    en: `Dear ${naam}\n\nThank you for your request at Wal-IT! We will contact you as soon as possible.\n\nYour details:\nName: ${naam}\nEmail: ${email}\nCompany: ${bedrijf}\n\nYour message:\n${bericht}\n\nKind regards\nWannes Gillis\nWal-IT\n+32 477 54 08 57\nwww.wal-it.be`,
+    it: `Gentile ${naam}\n\nGrazie per la sua richiesta a Wal-IT! La contatteremo il prima possibile.\n\nI suoi dati:\nNome: ${naam}\nEmail: ${email}\nAzienda: ${bedrijf}\n\nIl suo messaggio:\n${bericht}\n\nCordiali saluti\nWannes Gillis\nWal-IT\n+32 477 54 08 57\nwww.wal-it.be`
   };
 
   try {
