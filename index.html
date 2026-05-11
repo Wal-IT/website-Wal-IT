@@ -3,7 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wal-IT — Data | Inzicht | Impact</title>
+<title>Wal-IT — Power BI Dashboards & Business Intelligence voor KMO's</title>
+<meta name="description" content="Wal-IT helpt middelgrote ondernemingen met Power BI dashboards, data-analyse en rapportages. Vrijblijvende analyse. Gevestigd in België.">
+<meta name="keywords" content="Power BI, Business Intelligence, dashboards, data-analyse, rapportages, KMO, België, Wannes Gillis, Wal-IT, Microsoft Fabric, SQL, Python">
+<meta name="author" content="Wannes Gillis — Wal-IT">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.wal-it.be/">
+
+<!-- Open Graph (Facebook, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.wal-it.be/">
+<meta property="og:title" content="Wal-IT — Power BI Dashboards & Business Intelligence voor KMO's">
+<meta property="og:description" content="Wal-IT helpt middelgrote ondernemingen met Power BI dashboards, data-analyse en rapportages. Vrijblijvende analyse.">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Wal-IT — Power BI Dashboards & Business Intelligence">
+<meta name="twitter:description" content="Wal-IT helpt middelgrote ondernemingen met Power BI dashboards, data-analyse en rapportages.">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Wal-IT",
+  "description": "Business Intelligence en Power BI dashboards voor middelgrote ondernemingen in België.",
+  "url": "https://www.wal-it.be",
+  "telephone": "+32477540857",
+  "email": "wannes.gillis@wal-it.be",
+  "founder": {
+    "@type": "Person",
+    "name": "Wannes Gillis"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BE"
+  },
+  "areaServed": "BE",
+  "serviceType": ["Power BI Dashboards", "Data-analyse", "Business Intelligence", "Rapportages"],
+  "priceRange": "$$",
+  "sameAs": []
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -997,6 +1041,7 @@ const translations = {
 window.currentLang = 'nl';
 function setLang(lang) {
   window.currentLang = lang;
+  document.documentElement.lang = lang;
   const t = translations[lang];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
