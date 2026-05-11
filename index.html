@@ -821,7 +821,7 @@
       <form class="contact-form" id="contact-form">
         <div class="form-group">
           <label data-i18n="form-name">Naam</label>
-          <input type="text" name="naam" data-i18n="form-name-ph" placeholder="Uw naam" required>
+          <input type="text" name="naam" data-i18n="form-name-ph" placeholder="Uw naam">
         </div>
         <div class="form-group">
           <label data-i18n="form-email">E-mail</label>
@@ -833,7 +833,7 @@
         </div>
         <div class="form-group">
           <label data-i18n="form-message">Bericht</label>
-          <textarea name="bericht" data-i18n="form-message-ph" placeholder="Vertel iets over uw data-uitdaging..." required></textarea>
+          <textarea name="bericht" data-i18n="form-message-ph" placeholder="Vertel iets over uw data-uitdaging..."></textarea>
         </div>
         <div class="g-recaptcha" data-sitekey="6LfqVeIsAAAAAOl2K6iDy_IOkrvciRT3QiRKQU42" style="margin-bottom: 16px;"></div>
         <div id="form-success" style="display:none; background:#e8f5e9; color:#2e7d32; border-radius:8px; padding:16px; margin-bottom:16px; font-weight:600; text-align:center;" data-i18n="form-success">✅ Aanvraag verstuurd! We nemen snel contact met u op.</div>
@@ -1033,13 +1033,31 @@ function reloadCaptcha() {
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const form = this;
+  const lang = window.currentLang || 'nl';
+
+  const errorMessages = {
+    nl: { captcha: 'Gelieve de reCAPTCHA te bevestigen.', email: 'Gelieve een geldig e-mailadres in te vullen.' },
+    en: { captcha: 'Please confirm the reCAPTCHA.', email: 'Please enter a valid email address.' },
+    it: { captcha: 'Si prega di confermare il reCAPTCHA.', email: 'Si prega di inserire un indirizzo email valido.' }
+  };
+  const err = errorMessages[lang] || errorMessages.nl;
+
+  const showError = (msg) => {
+    const el = document.getElementById('form-success');
+    el.style.display = 'block';
+    el.style.background = '#ffebee';
+    el.style.color = '#c62828';
+    el.innerHTML = msg;
+    setTimeout(() => { el.style.display = 'none'; el.style.background = ''; el.style.color = ''; }, 4000);
+  };
 
   // Valideer reCAPTCHA
   const captchaResponse = grecaptcha.getResponse();
-  if (!captchaResponse) {
-    alert('Gelieve de reCAPTCHA te bevestigen.');
-    return;
-  }
+  if (!captchaResponse) { showError(err.captcha); return; }
+
+  // Valideer e-mail
+  const emailVal = form.querySelector('[name="_replyto"]').value;
+  if (!emailVal.includes('@') || !emailVal.includes('.')) { showError(err.email); return; }
   const templateParams = {
     naam: form.querySelector('[name="naam"]').value,
     email: form.querySelector('[name="_replyto"]').value,
