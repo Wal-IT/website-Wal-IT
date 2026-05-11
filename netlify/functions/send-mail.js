@@ -1,19 +1,6 @@
 const sgMail = require('@sendgrid/mail');
 
 exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
-
-const body = JSON.parse(event.body);
-const naam = body.naam;
-const email = body.email;
-const bedrijf = body.bedrijf;
-const bericht = body.bericht;
-console.log('Ontvangen data:', body);
-const sgMail = require('@sendgrid/mail');
-
-exports.handler = async (event) => {
   const body = JSON.parse(event.body);
   const naam = body.naam;
   const email = body.email;
