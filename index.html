@@ -323,7 +323,63 @@
     width: 100%;
   }
 
-  /* ── DIENSTEN ── */
+  /* ── TIJDSLIJN ── */
+  .timeline {
+    margin-top: 32px;
+    position: relative;
+    padding-left: 24px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, #1a4fd8, #5b9bff);
+    border-radius: 1px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -21px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1a4fd8;
+    border: 2px solid #5b9bff;
+  }
+  .timeline-item.current::before {
+    background: #5b9bff;
+    box-shadow: 0 0 0 4px rgba(91,155,255,0.2);
+  }
+  .timeline-year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #5b9bff;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .timeline-role {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 1px;
+  }
+  .timeline-company {
+    font-size: 13px;
+    color: #6b7a99;
+  }
+
+
   #diensten {
     padding: 100px 60px;
     background: var(--pale);
@@ -714,6 +770,35 @@
         <div class="section-divider"></div>
         <p data-i18n="over-p1">Ik ben Wannes Gillis, zaakvoerder van Wal-IT. Met een passie voor data help ik bedrijven om cijfers om te zetten in duidelijke inzichten die écht het verschil maken in hun dagelijkse beslissingen.</p>
         <p data-i18n="over-p2">Ik help organisaties om bestaande data te analyseren en om te zetten in overzichtelijke dashboards en rapportages met Power BI. Geen complexe IT-verhalen, maar inzichten die je meteen kunt gebruiken.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-role" data-i18n="tl-1-role">Master Handelsingenieur</div>
+            <div class="timeline-company" data-i18n="tl-1-company">KU Leuven</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-role" data-i18n="tl-2-role">Consultant</div>
+            <div class="timeline-company" data-i18n="tl-2-company">Deloitte</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-role" data-i18n="tl-3-role">Data & BI Analytics Consultant</div>
+            <div class="timeline-company" data-i18n="tl-3-company">ORTEC</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-role" data-i18n="tl-4-role">Workforce Planning Lead</div>
+            <div class="timeline-company" data-i18n="tl-4-company">Lotus Bakeries</div>
+          </div>
+          <div class="timeline-item current">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-role" data-i18n="tl-5-role">Zaakvoerder</div>
+            <div class="timeline-company" data-i18n="tl-5-company">Wal-IT</div>
+          </div>
+        </div>
+
         <div class="signature">Wannes Gillis</div>
         <div class="signature-title" data-i18n="sig-title">Zaakvoerder Wal-IT</div>
       </div>
@@ -925,6 +1010,11 @@ const translations = {
     "over-title": "Wannes<br>Gillis",
     "over-p1": "Ik ben Wannes Gillis, zaakvoerder van Wal-IT. Met een passie voor data help ik bedrijven om cijfers om te zetten in duidelijke inzichten die écht het verschil maken in hun dagelijkse beslissingen.",
     "over-p2": "Ik help organisaties om bestaande data te analyseren en om te zetten in overzichtelijke dashboards en rapportages met Power BI. Geen complexe IT-verhalen, maar inzichten die je meteen kunt gebruiken.",
+    "tl-1-role": "Master Handelsingenieur", "tl-1-company": "KU Leuven",
+    "tl-2-role": "Consultant", "tl-2-company": "Deloitte",
+    "tl-3-role": "Data & BI Analytics Consultant", "tl-3-company": "ORTEC",
+    "tl-4-role": "Workforce Planning Lead", "tl-4-company": "Lotus Bakeries",
+    "tl-5-role": "Zaakvoerder", "tl-5-company": "Wal-IT",
     "sig-title": "Zaakvoerder Wal-IT",
     "diensten-label": "Wat ik doe",
     "diensten-title": "Diensten",
@@ -968,6 +1058,11 @@ const translations = {
     "over-title": "Wannes<br>Gillis",
     "over-p1": "I am Wannes Gillis, managing director of Wal-IT. With a passion for data, I help businesses turn numbers into clear insights that truly make a difference in their daily decisions.",
     "over-p2": "I help organisations analyse existing data and transform it into clear dashboards and reports using Power BI. No complex IT jargon, just insights you can use straight away.",
+    "tl-1-role": "Master in Business Engineering", "tl-1-company": "KU Leuven",
+    "tl-2-role": "Consultant", "tl-2-company": "Deloitte",
+    "tl-3-role": "Data & BI Analytics Consultant", "tl-3-company": "ORTEC",
+    "tl-4-role": "Workforce Planning Lead", "tl-4-company": "Lotus Bakeries",
+    "tl-5-role": "Founder", "tl-5-company": "Wal-IT",
     "sig-title": "Managing Director Wal-IT",
     "diensten-label": "What I do",
     "diensten-title": "Services",
@@ -1011,6 +1106,11 @@ const translations = {
     "over-title": "Wannes<br>Gillis",
     "over-p1": "Sono Wannes Gillis, amministratore di Wal-IT. Con una passione per i dati, aiuto le aziende a trasformare i numeri in intuizioni chiare che fanno davvero la differenza nelle decisioni quotidiane.",
     "over-p2": "Aiuto le organizzazioni ad analizzare i dati esistenti e trasformarli in dashboard e report chiari con Power BI. Nessun gergo IT complesso, solo intuizioni immediatamente utilizzabili.",
+    "tl-1-role": "Master in Ingegneria Gestionale", "tl-1-company": "KU Leuven",
+    "tl-2-role": "Consulente", "tl-2-company": "Deloitte",
+    "tl-3-role": "Data & BI Analytics Consultant", "tl-3-company": "ORTEC",
+    "tl-4-role": "Workforce Planning Lead", "tl-4-company": "Lotus Bakeries",
+    "tl-5-role": "Fondatore", "tl-5-company": "Wal-IT",
     "sig-title": "Amministratore Wal-IT",
     "diensten-label": "Cosa faccio",
     "diensten-title": "Servizi",
