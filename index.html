@@ -287,9 +287,19 @@
   }
   .over-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 0px;
+    column-gap: 80px;
     align-items: start;
+  }
+  .over-text { grid-column: 1; grid-row: 1; }
+  .over-photo-wrap { grid-column: 2; grid-row: 1; }
+  .timeline {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    margin-top: 0;
+    width: 100%;
   }
   .over-text p {
     font-size: 15px; line-height: 1.8;
@@ -780,43 +790,41 @@
 
       <!-- TIJDSLIJN KOLOM -->
       <div class="timeline">
-        <svg viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
-          <!-- Glow lijn -->
-          <polyline class="tl-line-glow" points="40,400 170,350 300,310 430,250 580,180"/>
-          <!-- Hoofdlijn met ups en downs -->
-          <polyline class="tl-line" points="40,400 100,380 170,350 220,362 300,310 360,324 430,250 490,266 580,180"/>
+        <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" style="overflow:visible; width:100%;">
+          <!-- Kinked lijn -->
+          <polyline class="tl-line" points="40,300 100,278 170,255 220,268 300,215 360,228 430,160 490,174 580,90"/>
 
-          <!-- 2019 KU Leuven — label BOVEN -->
-          <circle class="tl-dot" cx="40" cy="400" r="6"/>
-          <text class="tl-year" x="40" y="376" text-anchor="middle">2019</text>
-          <text class="tl-role" x="40" y="364" text-anchor="middle" data-i18n="tl-1-role">Master Handelsingenieur</text>
-          <text class="tl-company" x="40" y="352" text-anchor="middle" data-i18n="tl-1-company">KU Leuven</text>
+          <!-- 2019 KU Leuven: bedrijf → rol → jaar → stip -->
+          <circle class="tl-dot" cx="40" cy="300" r="6"/>
+          <text class="tl-company" x="40" y="261" text-anchor="middle" data-i18n="tl-1-company">KU Leuven</text>
+          <text class="tl-role" x="40" y="274" text-anchor="middle" data-i18n="tl-1-role">Master Handelsingenieur</text>
+          <text class="tl-year" x="40" y="287" text-anchor="middle">2019</text>
 
-          <!-- 2019 Deloitte — label BOVEN -->
-          <circle class="tl-dot" cx="170" cy="350" r="6"/>
-          <text class="tl-year" x="170" y="326" text-anchor="middle">2019</text>
-          <text class="tl-role" x="170" y="314" text-anchor="middle" data-i18n="tl-2-role">Consultant</text>
-          <text class="tl-company" x="170" y="302" text-anchor="middle" data-i18n="tl-2-company">Deloitte</text>
+          <!-- 2019 Deloitte: bedrijf → rol → jaar → stip -->
+          <circle class="tl-dot" cx="170" cy="255" r="6"/>
+          <text class="tl-company" x="170" y="216" text-anchor="middle" data-i18n="tl-2-company">Deloitte</text>
+          <text class="tl-role" x="170" y="229" text-anchor="middle" data-i18n="tl-2-role">Consultant</text>
+          <text class="tl-year" x="170" y="242" text-anchor="middle">2019</text>
 
-          <!-- 2020 ORTEC — label BOVEN -->
-          <circle class="tl-dot" cx="300" cy="310" r="6"/>
-          <text class="tl-year" x="300" y="282" text-anchor="middle">2020</text>
-          <text class="tl-role" x="300" y="270" text-anchor="middle" data-i18n="tl-3-role">Data & BI Analytics Consultant</text>
-          <text class="tl-company" x="300" y="258" text-anchor="middle" data-i18n="tl-3-company">ORTEC</text>
-          <text class="tl-company" x="300" y="246" text-anchor="middle" style="font-style:italic; fill:#9ab0cc;">Brussels Airport · Shell · Heineken · Tata Steel</text>
+          <!-- 2020 ORTEC: bedrijf → klanten → rol → jaar → stip -->
+          <circle class="tl-dot" cx="300" cy="215" r="6"/>
+          <text class="tl-company" x="300" y="163" text-anchor="middle" data-i18n="tl-3-company">ORTEC</text>
+          <text class="tl-company" x="300" y="176" text-anchor="middle" style="font-style:italic; fill:#9ab0cc;">Brussels Airport · Shell · Heineken · Tata Steel</text>
+          <text class="tl-role" x="300" y="189" text-anchor="middle" data-i18n="tl-3-role">Data & BI Analytics Consultant</text>
+          <text class="tl-year" x="300" y="202" text-anchor="middle">2020</text>
 
-          <!-- 2024 Lotus Bakeries — label BOVEN -->
-          <circle class="tl-dot" cx="430" cy="250" r="6"/>
-          <text class="tl-year" x="430" y="224" text-anchor="middle">2024</text>
-          <text class="tl-role" x="430" y="212" text-anchor="middle" data-i18n="tl-4-role">Workforce Planning Lead</text>
-          <text class="tl-company" x="430" y="200" text-anchor="middle" data-i18n="tl-4-company">Lotus Bakeries</text>
+          <!-- 2024 Lotus Bakeries: bedrijf → rol → jaar → stip -->
+          <circle class="tl-dot" cx="430" cy="160" r="6"/>
+          <text class="tl-company" x="430" y="121" text-anchor="middle" data-i18n="tl-4-company">Lotus Bakeries</text>
+          <text class="tl-role" x="430" y="134" text-anchor="middle" data-i18n="tl-4-role">Workforce Planning Lead</text>
+          <text class="tl-year" x="430" y="147" text-anchor="middle">2024</text>
 
-          <!-- 2026 Wal-IT — label BOVEN -->
-          <circle class="tl-dot-glow" cx="580" cy="180" r="14"/>
-          <circle class="tl-dot-current" cx="580" cy="180" r="8"/>
-          <text class="tl-year" x="580" y="154" text-anchor="middle">2026</text>
-          <text class="tl-role" x="580" y="142" text-anchor="middle" data-i18n="tl-5-role">Zaakvoerder</text>
-          <text class="tl-company" x="580" y="130" text-anchor="middle" data-i18n="tl-5-company">Wal-IT</text>
+          <!-- 2026 Wal-IT: bedrijf → rol → jaar → stip -->
+          <circle class="tl-dot-glow" cx="580" cy="90" r="14"/>
+          <circle class="tl-dot-current" cx="580" cy="90" r="8"/>
+          <text class="tl-company" x="580" y="51" text-anchor="middle" data-i18n="tl-5-company">Wal-IT</text>
+          <text class="tl-role" x="580" y="64" text-anchor="middle" data-i18n="tl-5-role">Zaakvoerder</text>
+          <text class="tl-year" x="580" y="77" text-anchor="middle">2026</text>
         </svg>
       </div>
       <div class="over-photo-wrap">
@@ -1027,6 +1035,7 @@ const translations = {
     "over-title": "Wannes<br>Gillis",
     "over-p1": "Ik ben Wannes Gillis, zaakvoerder van Wal-IT. Met een passie voor data help ik bedrijven om cijfers om te zetten in duidelijke inzichten die écht het verschil maken in hun dagelijkse beslissingen.",
     "over-p2": "Ik help organisaties om bestaande data te analyseren en om te zetten in overzichtelijke dashboards en rapportages met Power BI. Geen complexe IT-verhalen, maar inzichten die je meteen kunt gebruiken.",
+    "tl-label": "Mijn parcours",
     "tl-1-role": "Master Handelsingenieur", "tl-1-company": "KU Leuven",
     "tl-2-role": "Consultant", "tl-2-company": "Deloitte",
     "tl-3-role": "Data & BI Analytics Consultant", "tl-3-company": "ORTEC",
@@ -1075,6 +1084,7 @@ const translations = {
     "over-title": "Wannes<br>Gillis",
     "over-p1": "I am Wannes Gillis, managing director of Wal-IT. With a passion for data, I help businesses turn numbers into clear insights that truly make a difference in their daily decisions.",
     "over-p2": "I help organisations analyse existing data and transform it into clear dashboards and reports using Power BI. No complex IT jargon, just insights you can use straight away.",
+    "tl-label": "My journey",
     "tl-1-role": "Master in Business Engineering", "tl-1-company": "KU Leuven",
     "tl-2-role": "Consultant", "tl-2-company": "Deloitte",
     "tl-3-role": "Data & BI Analytics Consultant", "tl-3-company": "ORTEC",
@@ -1123,6 +1133,7 @@ const translations = {
     "over-title": "Wannes<br>Gillis",
     "over-p1": "Sono Wannes Gillis, amministratore di Wal-IT. Con una passione per i dati, aiuto le aziende a trasformare i numeri in intuizioni chiare che fanno davvero la differenza nelle decisioni quotidiane.",
     "over-p2": "Aiuto le organizzazioni ad analizzare i dati esistenti e trasformarli in dashboard e report chiari con Power BI. Nessun gergo IT complesso, solo intuizioni immediatamente utilizzabili.",
+    "tl-label": "Il mio percorso",
     "tl-1-role": "Master in Ingegneria Gestionale", "tl-1-company": "KU Leuven",
     "tl-2-role": "Consulente", "tl-2-company": "Deloitte",
     "tl-3-role": "Data & BI Analytics Consultant", "tl-3-company": "ORTEC",
