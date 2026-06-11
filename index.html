@@ -287,8 +287,8 @@
   }
   .over-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
+    grid-template-columns: 1.25fr 0.75fr;
+    column-gap: 60px;
     align-items: start;
   }
   .over-left {
@@ -296,7 +296,7 @@
     grid-row: 1;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 0;
   }
   .over-photo-wrap {
     grid-column: 2;
@@ -306,10 +306,6 @@
     overflow: hidden;
     border-radius: 16px;
     width: 100%;
-  }
-  .timeline {
-    width: 100%;
-    margin-top: 12px;
   }
   .over-text p {
     font-size: 15px; line-height: 1.8;
@@ -330,18 +326,18 @@
   }
   .over-photo {
     position: absolute;
-    top: 0;
+    top: -150px;
     left: -15%;
     width: 130%;
-    height: 100%;
+    height: calc(100% + 150px);
     object-fit: cover;
-    object-position: left 22%;
+    object-position: left top;
     box-shadow: 0 20px 60px rgba(13,31,76,0.15);
   }
 
   /* ── TIJDSLIJN ── */
   .timeline {
-    margin-top: 20px;
+    margin-top: -10px;
     position: relative;
     width: 100%;
   }
@@ -680,8 +676,9 @@
       gap: 40px;
     }
     .timeline { margin-top: 0; }
-    .over-photo-wrap { order: -1; overflow: hidden; }
-    .over-photo { width: 130%; height: 360px; object-fit: cover; object-position: left 40%; margin-right: -30%; }
+    .over-left { grid-column: auto; grid-row: auto; }
+    .over-photo-wrap { grid-column: auto; grid-row: auto; order: -1; overflow: hidden; height: 340px; align-self: auto; }
+    .over-photo { position: absolute; top: -150px; left: -15%; width: 130%; height: calc(100% + 150px); object-fit: cover; object-position: left top; }
     .section-title { font-size: 28px; }
 
     /* Diensten */
@@ -796,7 +793,7 @@
         </div>
         <!-- TIJDSLIJN -->
         <div class="timeline">
-          <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" style="overflow:visible; width:100%;">
+          <svg viewBox="0 35 680 280" xmlns="http://www.w3.org/2000/svg" style="overflow:visible; width:100%;">
             <!-- Kinked lijn -->
             <polyline class="tl-line" points="40,300 100,278 170,255 220,268 300,215 360,228 430,160 490,174 580,90"/>
 
